@@ -1,15 +1,16 @@
 # language: pt
 Funcionalidade: Compra de Passagem Aérea - BlazeDemo
-  Como um usuário do portal
-  Eu quero pesquisar e comprar uma passagem
-  Para validar a integridade do fluxo de vendas.
+  Como um viajante do portal
+  Eu quero pesquisar voos entre as cidades permitidas
+  Para validar o fluxo de compra com 4 passageiros.
 
   Contexto:
     Dado que eu acesso o portal BlazeDemo
 
-  Cenário: 01 - Reserva de voo com sucesso
-    Quando eu seleciono a origem "Sao Paolo" e o destino "London"
+  @regressivo @missao_israel
+  Cenário: 01 - Reserva de voo Paris para Londres (Grupo 4 Passageiros)
+    Quando eu seleciono a origem "Paris" e o destino "London"
     E clico no botão de procurar voos
     E escolho o primeiro voo disponível
-    E preencho os dados de pagamento com sucesso
-    Então o sistema deve exibir a mensagem "Thank you for your purchase today!"
+    E preencho os dados para "Luciana - Grupo 4 Israel"
+    Então o sistema deve exibir "Thank you for your purchase today!"
