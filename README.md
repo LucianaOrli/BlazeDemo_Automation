@@ -31,6 +31,9 @@ Picos de Resposta (Max): Foram registradas latências de até 3206ms (3.2 segund
 Conclusão Técnica: O critério de aceitação (Percentil 90 < 2s) não foi plenamente satisfeito sob a carga máxima de 250 RPS.
 
 A análise de carga via Locust identificou que o 90th percentile excede 2s devido à latência de rede e tempo de processamento do backend do ambiente de demonstração (Blaze Demo). O comportamento foi mapeado e documentado nos relatórios de performance anexos na pasta /reports.
+
+📂 Clique aqui para ver o Relatório de Performance (CSV)
+
 Recomendação de QA: Para ambiente de produção, é imprescindível o escalonamento horizontal e a reserva de recursos dedicada para garantir que o tempo de resposta permaneça dentro do SLA estabelecido pela regra de negócio.
 
 
