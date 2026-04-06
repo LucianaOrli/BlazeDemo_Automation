@@ -1,0 +1,37 @@
+name: Performance Test CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  performance-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install locust
+
+    - name: Run Locust Test
+      run: |
+        locust -f test_performance_blaze.py --headless -H https://blazedemo.com -u 10 -r 1 --run-time 1m --html report_ci.html --csv stats_ci
+    
+    - name: Upload Results
+      uses: actions/upload-artifact@v3
+      with:
+        name: performance-reports
+        path: |
+          report_ci.html
+          stats_ci*
