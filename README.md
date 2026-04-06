@@ -4,7 +4,7 @@
  * **URL:** https://www.blazedemo.com
 * **Critério:** 250 RPS / 90th Percentile < 2s.
 
- 🌟 ***![Performance Test CI](https://github.com/lucianaorli/blazedemo/actions/workflows/main.yml/badge.svg)***
+  ***![Performance Test CI](https://github.com/lucianaorli/blazedemo/actions/workflows/main.yml/badge.svg)***
 
 📊 Análise Técnica:
 O script foi desenvolvido em **Locust** para atingir a vazão solicitada. 
@@ -46,6 +46,8 @@ Conclusão: O critério de 90th percentile < 2s não foi satisfatório devido à
 Execução Automatizada: O script de performance (test_performance_blaze.py) é disparado automaticamente a cada push ou pull request.
 
 Relatórios Automáticos: A pipeline gera e armazena os artefatos de execução (HTML e CSV) diretamente na aba Actions do GitHub após cada teste.
+
+![Performance Test CI](https://github.com/lucianaorli/blazedemo/actions/workflows/main.yml/badge.svg)
 
 Ambiente Padronizado: Execução em ambiente isolado (Ubuntu Latest) com Python 3.9, garantindo a reprodutibilidade dos testes.
 
