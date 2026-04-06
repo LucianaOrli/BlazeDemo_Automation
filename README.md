@@ -35,7 +35,24 @@ A análise de carga via Locust identificou que o 90th percentile excede 2s devid
 📂 Clique aqui para ver o Relatório de Performance (CSV)
 
 Recomendação de QA: Para ambiente de produção, é imprescindível o escalonamento horizontal e a reserva de recursos dedicada para garantir que o tempo de resposta permaneça dentro do SLA estabelecido pela regra de negócio.
-
-
 Sob estresse de 250 RPS, o ambiente público apresentou latência elevada e timeouts ocasionais.
-Conclusão: O critério de 90th percentile < 2s não foi satisfatório devido às limitações do ambiente compartilhado (infraestrutura pública), evidenciando a necessidade de escalonamento horizontal e reserva de recursos para garantir a performance em produção.
+Conclusão: O critério de 90th percentile < 2s não foi satisfatório devido às limitações do ambiente compartilhado,  evidenciando a necessidade de escalonamento horizontal e reserva de recursos para garantir a performance em produção.
+
+
+"Roadmap / Próximos Passos" 
+
+🚀 Próximos Passos (CI/CD Pipeline)
+Para as próximas iterações, está planejada a implementação de uma pipeline de CI/CD via GitHub Actions, visando:
+
+Execução Automática: Rodar o test_performance_blaze.py a cada Pull Request.
+
+Gate de Qualidade: Bloquear o deploy caso o 90th percentile ultrapasse os limites estabelecidos.
+
+Publicação de Artefatos: Upload automático dos relatórios HTML e CSV para o GitHub Pages ou Actions Artifacts.
+
+PS:. Criari uma pasta chamada .github/workflows/.
+
+Dentro dela, um arquivo main.yml.
+
+Esse arquivo diria ao GitHub: "Toda vez que eu der Push, instale o Python, instale o Locust e rode o teste da Blaze Demo automaticamente".
+
