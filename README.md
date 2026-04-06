@@ -4,6 +4,8 @@
  * **URL:** https://www.blazedemo.com
 * **Critério:** 250 RPS / 90th Percentile < 2s.
 
+ 🌟 ***![Performance Test CI](https://github.com/lucianaorli/blazedemo/actions/workflows/main.yml/badge.svg)***
+
 📊 Análise Técnica:
 O script foi desenvolvido em **Locust** para atingir a vazão solicitada. 
 Resultado: Sob estresse de 250 RPS, o ambiente público apresentou degradação (Timeouts), indicando a necessidade de escalonamento de infraestrutura para satisfazer o critério de aceitação em ambiente produtivo.
@@ -38,21 +40,14 @@ Recomendação de QA: Para ambiente de produção, é imprescindível o escalona
 Sob estresse de 250 RPS, o ambiente público apresentou latência elevada e timeouts ocasionais.
 Conclusão: O critério de 90th percentile < 2s não foi satisfatório devido às limitações do ambiente compartilhado,  evidenciando a necessidade de escalonamento horizontal e reserva de recursos para garantir a performance em produção.
 
+**CI/CD Pipeline (GitHub Actions)***
+***O projeto conta com uma esteira de Integração Contínua (CI) configurada via GitHub Actions, garantindo a qualidade em cada entrega***:
 
-"Roadmap / Próximos Passos" 
+Execução Automatizada: O script de performance (test_performance_blaze.py) é disparado automaticamente a cada push ou pull request.
 
-🚀 Próximos Passos (CI/CD Pipeline)
-Para as próximas iterações, está planejada a implementação de uma pipeline de CI/CD via GitHub Actions, visando:
+Relatórios Automáticos: A pipeline gera e armazena os artefatos de execução (HTML e CSV) diretamente na aba Actions do GitHub após cada teste.
 
-Execução Automática: Rodar o test_performance_blaze.py a cada Pull Request.
+Ambiente Padronizado: Execução em ambiente isolado (Ubuntu Latest) com Python 3.9, garantindo a reprodutibilidade dos testes.
 
-Gate de Qualidade: Bloquear o deploy caso o 90th percentile ultrapasse os limites estabelecidos.
 
-Publicação de Artefatos: Upload automático dos relatórios HTML e CSV para o GitHub Pages ou Actions Artifacts.
-
-PS:. Criari uma pasta chamada .github/workflows/.
-
-Dentro dela, um arquivo main.yml.
-
-Esse arquivo diria ao GitHub: "Toda vez que eu der Push, instale o Python, instale o Locust e rode o teste da Blaze Demo automaticamente".
 
